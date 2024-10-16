@@ -4,7 +4,7 @@ Created on Fri Aug 2 10:00:00 2019
 Edited on Wed Oct 16 2024
 @author: Jing Zhang
 
-Objective: Prepare for the images for weed mapping
+Objective: Crop individual plot from UAS Geotiff
 
 Goals: 1) Read the GeoTiff raster
        2) Crop the images based on the grid and output them as GeoTiff with updated metadata 
