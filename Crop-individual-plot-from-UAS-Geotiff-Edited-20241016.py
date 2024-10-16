@@ -12,36 +12,32 @@ Goals: 1) Read the GeoTiff raster
           in another file for future use
 """
 ######################################################
+'''
+Load more packages 
+'''
 import os
 import rasterio as rio
-
+from rasterio.plot import show
+import geopandas as gpd
+from shapely.geometry import Polygon
+import numpy as np
 '''
 Set up working directory, where the Crop GeoTiff will be stored
 '''
-wd = 'C:\\Research-Data-2024\\Strawberry\\Plot-size-RGB-UAS\\20240529' 
+wd = 'C:\\Research-Data-2024' 
 os.chdir(wd)
 os.getcwd()
 '''
-Return a list of files under the working directory
-& Pass the GeoTiff filename to filename
+Pass the GeoTiff filename to filename
+Pass the shapefile filename to poly
 '''
-GT_fname = 'C:\\Data-share-Rob-2024\\CC24_Strawberry\\UAV\\05292024\\metashape_ortho.tif'
-
+GT_fname = 'C:\\Data-share-Rob-2024\\'
+poly_fname='W:/Strawberry-HTP-files-in-working/SHP/Field-plots.shp'
 '''
 Read some important information from the GeoTiff
 '''
 raster = rio.open(GT_fname)
 raster.profile
-
-'''
-Load more packages 
-'''
-from rasterio.plot import show
-import geopandas as gpd
-from shapely.geometry import Polygon
-import numpy as np
-
-poly_fname='W:/Strawberry-HTP-files-in-working/SHP/Field-plots.shp'
 
 """
 Crop the rasters based on polygon
